@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/REST-ParkingWatcher.iml" filepath="$PROJECT_DIR$/REST-ParkingWatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_main.iml" filepath="$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_main.iml" group="REST-ParkingWatcher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_test.iml" filepath="$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_test.iml" group="REST-ParkingWatcher" />
+    </modules>
+  </component>
+</project>
