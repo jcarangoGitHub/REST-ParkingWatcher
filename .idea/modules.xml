@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/REST-ParkingWatcher.iml" filepath="$PROJECT_DIR$/REST-ParkingWatcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_main.iml" filepath="$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_main.iml" group="REST-ParkingWatcher" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_test.iml" filepath="$PROJECT_DIR$/.idea/modules/REST-ParkingWatcher_test.iml" group="REST-ParkingWatcher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc_main.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc_main.iml" group="buildSrc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/buildSrc_test.iml" filepath="$PROJECT_DIR$/.idea/modules/buildSrc_test.iml" group="buildSrc" />
     </modules>
   </component>
 </project>
