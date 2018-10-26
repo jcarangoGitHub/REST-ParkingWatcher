@@ -1,4 +1,4 @@
-package parkingwatcher.model;
+package parkingwatcher.model.parkedvehicle;
 
 import parkingwatcher.entities.EParkedVehicle;
 import parkingwatcher.repository.ParkedVehiclesRepository;
@@ -28,7 +28,7 @@ public class ParkedVehicle extends EParkedVehicle {
     }
 
     public ParkedVehicle registerVehicleEntry() {
-        this.setEntryDate(getCurrentDate());
+        this.setEntryDate(getInstanceOfUtil().getCurrentDate());
         this.setStatus("PARKED");
         this.setExitDate(null);
         ParkedVehiclesRepository repository = getInstanceOfParkedVehiclesRepository();
@@ -37,14 +37,14 @@ public class ParkedVehicle extends EParkedVehicle {
         return this;
     }
 
-    public ParkedVehicle searchVehicleByIdVehicle() {
+    public ParkedVehicle searchVehicleByIdVehicleAndStatusParked() {
         ParkedVehiclesRepository repository = getInstanceOfParkedVehiclesRepository();
-        return repository.searchParkedVehicleByIdVehicle(this.getIdVehicle());
+        return repository.searchParkedVehicleByIdVehicleAndStatusParked(this.getIdVehicle());
     }
 
     public ParkedVehicle registerVehicleExit() {
         this.setStatus("PAID");
-        this.setExitDate(getCurrentDate());
+        this.setExitDate(getInstanceOfUtil().getCurrentDate());
         this.setPaidValue(calculateTotalToPay());
 
         ParkedVehiclesRepository repository = getInstanceOfParkedVehiclesRepository();
@@ -53,57 +53,20 @@ public class ParkedVehicle extends EParkedVehicle {
 
     protected Double calculateTotalToPay() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+        ParkedVehicleUtil util = getInstanceOfUtil();
         try {
             Date exitDate = format.parse(this.getExitDate());
             Date entryDate = format.parse(this.getEntryDate());
             long hours = (exitDate.getTime() - entryDate.getTime())/(60*60*1000);
             if (this.getTypeVehicle().equals("C")) {
-                return calculateTotalToPayVehicle(hours, _carHourCost, _carDayCost);
+                return util.calculateTotalToPayVehicle(hours, _carHourCost, _carDayCost);
             }else if(this.getTypeVehicle().equals("M")) {
-                return calculateTotalToPayVehicle(hours, _motorcycleHourCost, _motorcycleDayCost);
+                return util.calculateTotalToPayVehicle(hours, _motorcycleHourCost, _motorcycleDayCost);
             }
         }catch (ParseException pe) {
             System.out.println(pe);
         }
         return -1.0;
-    }
-
-    protected double calculateTotalToPayVehicle(long hours, double vehicleHourCost, double vehicleDayCost) {
-        if (hours < 9) {
-            return hours * vehicleHourCost;
-        } else {
-            double days = hours / 24.0;
-
-            if (days <= 1) {
-                return vehicleDayCost;
-            } else {
-                int daysToPay = (int) days;
-                double hoursToPay = getHoursToPay(days, daysToPay);
-                if (hoursToPay >= 9) {
-                    daysToPay ++;
-                    hoursToPay = 0;
-                }
-                return (daysToPay * vehicleDayCost) + (hoursToPay * vehicleHourCost);
-            }
-        }
-    }
-
-    protected double getHoursToPay(double days, int daysToPay) {
-        double hoursToPay = days - daysToPay;
-        hoursToPay = hoursToPay * 24;
-
-        return hoursToPay;
-    }
-
-    protected String getCurrentDate() {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        Calendar calendar = new GregorianCalendar();
-        TimeZone timeZone = calendar.getTimeZone();
-        format.setTimeZone(timeZone);
-        Date today = new Date();
-        String strToday = format.format(today);
-
-        return strToday;
     }
 
     public boolean validateTypeVehicle(String typeVehicle) {
@@ -149,4 +112,7 @@ public class ParkedVehicle extends EParkedVehicle {
         return Calendar.getInstance();
     }
 
+    protected ParkedVehicleUtil getInstanceOfUtil() {
+        return new ParkedVehicleUtil();
+    }
 }

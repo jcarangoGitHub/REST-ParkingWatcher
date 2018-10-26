@@ -1,10 +1,8 @@
 package parkingwatcher.util;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
-import parkingwatcher.model.ParkedVehicle;
+import parkingwatcher.model.parkedvehicle.ParkedVehicle;
 
-import java.util.Date;
 import java.util.Map;
 
 public class Converter {

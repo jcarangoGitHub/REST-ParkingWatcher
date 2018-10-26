@@ -1,4 +1,4 @@
-package parkingwatcher.model;
+package parkingwatcher.model.parkedvehicle;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -71,12 +71,12 @@ public class ParkedVehicleTest {
         ParkedVehiclesRepository parkedVehiclesRepositoryMock = mock(ParkedVehiclesRepository.class);
 
         when(parkedVehicleSpy.getInstanceOfParkedVehiclesRepository()).thenReturn(parkedVehiclesRepositoryMock);
-        when(parkedVehiclesRepositoryMock.searchParkedVehicleByIdVehicle(Mockito.any())).thenReturn(parkedVehicleSpy);
+        when(parkedVehiclesRepositoryMock.searchParkedVehicleByIdVehicleAndStatusParked(Mockito.any())).thenReturn(parkedVehicleSpy);
 
 
-        parkedVehicleSpy.searchVehicleByIdVehicle();
+        parkedVehicleSpy.searchVehicleByIdVehicleAndStatusParked();
 
-        verify(parkedVehiclesRepositoryMock, times(1)).searchParkedVehicleByIdVehicle(Mockito.anyString());
+        verify(parkedVehiclesRepositoryMock, times(1)).searchParkedVehicleByIdVehicleAndStatusParked(Mockito.anyString());
     }
 
 
@@ -84,11 +84,13 @@ public class ParkedVehicleTest {
     public void registerVehicleExit_MustSetStatusPAID() {
         ParkedVehicle parkedVehicleSpy = spy(new ParkedVehicle("C", "ABC321"));
         ParkedVehiclesRepository parkedVehiclesRepositoryMock = mock(ParkedVehiclesRepository.class);
+        ParkedVehicleUtil utilSpy = spy(new ParkedVehicleUtil());
         String dateToReturn = "2018-10-25T13:48:00";
 
         when(parkedVehicleSpy.getEntryDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.getExitDate()).thenReturn(dateToReturn);
-        when(parkedVehicleSpy.getCurrentDate()).thenReturn(dateToReturn);
+        when(parkedVehicleSpy.getInstanceOfUtil()).thenReturn(utilSpy);
+        when(utilSpy.getCurrentDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.calculateTotalToPay()).thenReturn(new Double(1500));
         when(parkedVehicleSpy.getInstanceOfParkedVehiclesRepository()).thenReturn(parkedVehiclesRepositoryMock);
         when(parkedVehiclesRepositoryMock.updateParkedVehicle(Mockito.any())).thenReturn(parkedVehicleSpy);
@@ -102,18 +104,20 @@ public class ParkedVehicleTest {
     public void registerVehicleExit_MustCallGetCurrentDateAndExitDateMustNotBeNull() {
         ParkedVehicle parkedVehicleSpy = spy(new ParkedVehicle("C", "ABC321"));
         ParkedVehiclesRepository parkedVehiclesRepositoryMock = mock(ParkedVehiclesRepository.class);
+        ParkedVehicleUtil utilSpy = spy(new ParkedVehicleUtil());
         String dateToReturn = "2018-10-25T13:48:00";
 
         when(parkedVehicleSpy.getEntryDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.getExitDate()).thenReturn(dateToReturn);
-        when(parkedVehicleSpy.getCurrentDate()).thenReturn(dateToReturn);
+        when(parkedVehicleSpy.getInstanceOfUtil()).thenReturn(utilSpy);
+        when(utilSpy.getCurrentDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.calculateTotalToPay()).thenReturn(new Double(1500));
         when(parkedVehicleSpy.getInstanceOfParkedVehiclesRepository()).thenReturn(parkedVehiclesRepositoryMock);
         when(parkedVehiclesRepositoryMock.updateParkedVehicle(Mockito.any())).thenReturn(parkedVehicleSpy);
 
         ParkedVehicle ans = parkedVehicleSpy.registerVehicleExit();
 
-        verify(parkedVehicleSpy, times(1)).getCurrentDate();
+        verify(utilSpy, times(1)).getCurrentDate();
         Assert.assertEquals(ans.getExitDate(), dateToReturn);
     }
 
@@ -121,12 +125,14 @@ public class ParkedVehicleTest {
     public void registerVehicleExit_MustCallCalculateTotalToPayAndPaidValueMustNotBeNull() {
         ParkedVehicle parkedVehicleSpy = spy(new ParkedVehicle("C", "ABC321"));
         ParkedVehiclesRepository parkedVehiclesRepositoryMock = mock(ParkedVehiclesRepository.class);
+        ParkedVehicleUtil utilSpy = spy(new ParkedVehicleUtil());
         String dateToReturn = "2018-10-25T13:48:00";
         Double valueToReturn = new Double(1500);
 
         when(parkedVehicleSpy.getEntryDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.getExitDate()).thenReturn(dateToReturn);
-        when(parkedVehicleSpy.getCurrentDate()).thenReturn(dateToReturn);
+        when(parkedVehicleSpy.getInstanceOfUtil()).thenReturn(utilSpy);
+        when(utilSpy.getCurrentDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.calculateTotalToPay()).thenReturn(new Double(valueToReturn));
         when(parkedVehicleSpy.getInstanceOfParkedVehiclesRepository()).thenReturn(parkedVehiclesRepositoryMock);
         when(parkedVehicleSpy.getEntryDate()).thenReturn(dateToReturn);
@@ -143,12 +149,14 @@ public class ParkedVehicleTest {
     public void registerVehicleExit_MustAlwaysCallUpdateParkedVehicle() {
         ParkedVehicle parkedVehicleSpy = spy(new ParkedVehicle("C", "ABC321"));
         ParkedVehiclesRepository parkedVehiclesRepositoryMock = mock(ParkedVehiclesRepository.class);
+        ParkedVehicleUtil utilSpy = spy(new ParkedVehicleUtil());
         String dateToReturn = "2018-10-25T13:48:00";
         Double valueToReturn = new Double(1500);
 
         when(parkedVehicleSpy.getEntryDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.getExitDate()).thenReturn(dateToReturn);
-        when(parkedVehicleSpy.getCurrentDate()).thenReturn(dateToReturn);
+        when(parkedVehicleSpy.getInstanceOfUtil()).thenReturn(utilSpy);
+        when(utilSpy.getCurrentDate()).thenReturn(dateToReturn);
         when(parkedVehicleSpy.calculateTotalToPay()).thenReturn(new Double(valueToReturn));
         when(parkedVehicleSpy.getInstanceOfParkedVehiclesRepository()).thenReturn(parkedVehiclesRepositoryMock);
         when(parkedVehiclesRepositoryMock.updateParkedVehicle(Mockito.any())).thenReturn(parkedVehicleSpy);
@@ -156,36 +164,6 @@ public class ParkedVehicleTest {
         parkedVehicleSpy.registerVehicleExit();
 
         verify(parkedVehiclesRepositoryMock, times(1)).updateParkedVehicle(Mockito.any());
-    }
-
-    @Test
-    public void getCurrentDate_MustNotReturnNull() {
-        ParkedVehicle parkedVehicle = new ParkedVehicle("ABC123");
-        String ans = parkedVehicle.getCurrentDate();
-        Assert.assertNotNull(ans);
-    }
-
-    @Test
-    public void getCurrentDate_MustReturnDateFormatted() {
-        ParkedVehicle parkedVehicle = new ParkedVehicle("ABC123");
-
-        String ans = parkedVehicle.getCurrentDate();
-
-        String firstSeparator = ans.substring(4,5);
-        String secondSeparator = ans.substring(7,8);
-        String timeSeparator = ans.substring(10, 11);
-        String hourSeparator = ans.substring(13,14);
-        String minuteSeparator = ans.substring(16,17);
-
-        boolean fsAssert = firstSeparator.equals("-");
-        boolean ssAssert = secondSeparator.equals("-");
-        boolean tsAssert =  timeSeparator.equals("T");
-        boolean hsAssert = hourSeparator.equals(":");
-        boolean msAssert = minuteSeparator.equals(":");
-
-        boolean finalAssert = fsAssert && ssAssert && tsAssert && hsAssert && msAssert;
-
-        Assert.assertTrue(finalAssert);
     }
 
     @Test

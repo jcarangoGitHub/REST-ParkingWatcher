@@ -1,7 +1,7 @@
 package parkingwatcher.repository;
 
 import com.mongodb.*;
-import parkingwatcher.model.ParkedVehicle;
+import parkingwatcher.model.parkedvehicle.ParkedVehicle;
 import parkingwatcher.util.Converter;
 
 import java.util.Iterator;

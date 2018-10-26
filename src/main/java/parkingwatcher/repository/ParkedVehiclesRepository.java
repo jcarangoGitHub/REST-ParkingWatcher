@@ -1,6 +1,6 @@
 package parkingwatcher.repository;
 
-import parkingwatcher.model.ParkedVehicle;
+import parkingwatcher.model.parkedvehicle.ParkedVehicle;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class ParkedVehiclesRepository {
         return pv;
     }
 
-    public ParkedVehicle searchParkedVehicleByIdVehicle(String idVehicle) {
+    public ParkedVehicle searchParkedVehicleByIdVehicleAndStatusParked(String idVehicle) {
         IDataAccess dataAccess = new MongoDataAccess();
         return dataAccess.searchParkedVehicleByIdVehicleAndStatusParked(idVehicle);
     }
