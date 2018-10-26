@@ -4,6 +4,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import parkingwatcher.model.parkedvehicle.ParkedVehicle;
@@ -12,7 +13,7 @@ import parkingwatcher.model.parkedvehicle.ParkedVehicleValidator;
 
 @RestController
 public class ParkedVehiclesController {
-    @RequestMapping("/entryVehicle")
+    @RequestMapping(value = "/entryVehicle", method = RequestMethod.POST)
     public ResponseEntity<ParkedVehicle> entryVehicle(@RequestParam(value = "typeVehicle") String type,
                                        @RequestParam(value = "idVehicle") String idVehicle) {
 
@@ -35,7 +36,7 @@ public class ParkedVehiclesController {
         }
     }
 
-    @RequestMapping("/exitVehicle")
+    @RequestMapping(value = "/exitVehicle", method = RequestMethod.POST)
     public ResponseEntity<ParkedVehicle> exitVehicle(@RequestParam(value = "idVehicle") String idVehicle) {
 
         ParkedVehicle parkedVehicle = new ParkedVehicle(idVehicle);

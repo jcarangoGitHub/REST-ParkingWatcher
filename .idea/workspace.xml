@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddfb1d5b-262a-4dbc-a09b-2cbce6a55ff0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicleValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtilTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/parkingwatcher/controllers/ParkedVehiclesController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/parkingwatcher/controllers/ParkedVehiclesController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/parkingwatcher/model/ParkedVehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/parkingwatcher/repository/IDataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/parkingwatcher/repository/IDataAccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/parkingwatcher/repository/MongoDataAccess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/parkingwatcher/repository/MongoDataAccess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/parkingwatcher/repository/ParkedVehiclesRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/parkingwatcher/repository/ParkedVehiclesRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/parkingwatcher/util/Converter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/parkingwatcher/util/Converter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/parkingwatcher/model/ParkedVehicleTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parkingwatcher/controllers/ParkedVehiclesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/controllers/ParkedVehiclesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parkingwatcher/model/ParkedVehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/IDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/IDataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/MongoDataAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/MongoDataAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/ParkedVehiclesRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/ParkedVehiclesRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/parkingwatcher/util/Converter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/parkingwatcher/util/Converter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parkingwatcher/model/ParkedVehicleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="ddfb1d5b-262a-4dbc-a09b-2cbce6a55ff0" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,8 +25,8 @@
       <file leaf-file-name="ParkedVehiclesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/controllers/ParkedVehiclesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="21" column="56" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="56" />
+            <state relative-caret-position="867">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -70,7 +51,7 @@
       <file leaf-file-name="ParkedVehicle.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicle.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
+            <state relative-caret-position="407">
               <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,14 +59,12 @@
                 <element signature="e#938#939#0" expanded="true" />
                 <element signature="e#984#985#0" expanded="true" />
                 <element signature="e#1016#1017#0" expanded="true" />
-                <element signature="method#registerVehicleEntry#0;class#ParkedVehicle#0" />
-                <element signature="method#searchVehicleByIdVehicleAndStatusParked#0;class#ParkedVehicle#0" />
-                <element signature="method#registerVehicleExit#0;class#ParkedVehicle#0" />
-                <element signature="method#calculateTotalToPay#0;class#ParkedVehicle#0" />
-                <element signature="method#validateTypeVehicle#0;class#ParkedVehicle#0" />
-                <element signature="method#validateNumberOfVehiclesParkedCurrently#0;class#ParkedVehicle#0" />
-                <element signature="method#isTodayADayToValidate#0;class#ParkedVehicle#0" />
-                <element signature="method#getInstanceOfParkedVehiclesRepository#0;class#ParkedVehicle#0" />
+                <element signature="e#4569#4570#0" expanded="true" />
+                <element signature="e#4646#4647#0" expanded="true" />
+                <element signature="e#5184#5185#0" expanded="true" />
+                <element signature="e#5229#5230#0" expanded="true" />
+                <element signature="e#5162#5163#0" expanded="true" />
+                <element signature="e#5208#5209#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -94,7 +73,7 @@
       <file leaf-file-name="ParkedVehicleUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-159">
+            <state relative-caret-position="170">
               <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -103,23 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ParkedVehicleUtilTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtilTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParkedVehicleTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ParkedVehicleTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+            <state relative-caret-position="136">
+              <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -601,7 +568,6 @@
         <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/entities/EParkedVehicle.java" />
         <option value="$PROJECT_DIR$/src/test/java/parkingwatcher/model/ParkedVehicleTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/repository/ParkedVehiclesRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/controllers/ParkedVehiclesController.java" />
         <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/model/ParkedVehicleValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/util/Utilities.java" />
         <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/model/ParkedVehicle.java" />
@@ -611,6 +577,7 @@
         <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/parkingwatcher/controllers/ParkedVehiclesController.java" />
       </list>
     </option>
   </component>
@@ -925,9 +892,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParkedVehicleTest - 2018.10.26 at 10h 04m 14s.xml">
-      <configuration name="ParkedVehicleTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ParkedVehicleTest - 2018.10.26 at 10h 11m 01s.xml">
       <configuration name="ParkedVehicleTest" configurationId="JUnit" />
     </history-entry>
@@ -955,6 +919,9 @@
     <history-entry file="ParkedVehicleTest - 2018.10.26 at 10h 36m 48s.xml">
       <configuration name="ParkedVehicleTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ParkedVehicleUtilTest - 2018.10.26 at 10h 39m 17s.xml">
+      <configuration name="ParkedVehicleUtilTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1168" height="840" extended-state="6" />
@@ -968,7 +935,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35185185" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35185185" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -1045,13 +1012,13 @@
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicleValidator.java</url>
-          <line>89</line>
+          <url>file://$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicle.java</url>
+          <line>72</line>
           <properties />
-          <option name="timeStamp" value="32" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="33" />
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1333,10 +1300,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#302#303#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/controllers/ParkedVehiclesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="56" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="56" />
+        <state relative-caret-position="867">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1357,7 +1346,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
+        <state relative-caret-position="407">
           <caret line="106" column="52" selection-start-line="106" selection-start-column="52" selection-end-line="106" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1365,21 +1354,19 @@
             <element signature="e#938#939#0" expanded="true" />
             <element signature="e#984#985#0" expanded="true" />
             <element signature="e#1016#1017#0" expanded="true" />
-            <element signature="method#registerVehicleEntry#0;class#ParkedVehicle#0" />
-            <element signature="method#searchVehicleByIdVehicleAndStatusParked#0;class#ParkedVehicle#0" />
-            <element signature="method#registerVehicleExit#0;class#ParkedVehicle#0" />
-            <element signature="method#calculateTotalToPay#0;class#ParkedVehicle#0" />
-            <element signature="method#validateTypeVehicle#0;class#ParkedVehicle#0" />
-            <element signature="method#validateNumberOfVehiclesParkedCurrently#0;class#ParkedVehicle#0" />
-            <element signature="method#isTodayADayToValidate#0;class#ParkedVehicle#0" />
-            <element signature="method#getInstanceOfParkedVehiclesRepository#0;class#ParkedVehicle#0" />
+            <element signature="e#4569#4570#0" expanded="true" />
+            <element signature="e#4646#4647#0" expanded="true" />
+            <element signature="e#5184#5185#0" expanded="true" />
+            <element signature="e#5229#5230#0" expanded="true" />
+            <element signature="e#5162#5163#0" expanded="true" />
+            <element signature="e#5208#5209#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
+        <state relative-caret-position="170">
           <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1387,32 +1374,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/parkingwatcher/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-            <element signature="e#302#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/parkingwatcher/model/parkedvehicle/ParkedVehicleUtilTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="136">
+          <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
