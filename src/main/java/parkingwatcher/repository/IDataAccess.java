@@ -1,7 +1,16 @@
 package parkingwatcher.repository;
 
-import parkingwatcher.model.ParkedVehicles;
+import com.mongodb.DBObject;
+import parkingwatcher.model.ParkedVehicle;
+
+import java.util.List;
 
 public interface IDataAccess {
-    ParkedVehicles mongo_insertParkedVehicle(ParkedVehicles pv);
+    ParkedVehicle insertParkedVehicle(ParkedVehicle pv);
+
+    ParkedVehicle searchParkedVehicleByIdVehicleAndStatusParked(String idVehicle);
+
+    ParkedVehicle updateParkedVehicle(ParkedVehicle parkedVehicle);
+
+    List<ParkedVehicle> getParkedVehiclesByTypeAndStatusParked(String typeVehicle);
 }

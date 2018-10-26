@@ -1,17 +1,19 @@
-package parkingwatcher.model;
+package parkingwatcher.entities;
 
-import java.util.Date;
+public class EParkedVehicle {
 
-public class ParkedVehicles {
-
-    private final String typeVehicle;
+    private String typeVehicle;
     private final String idVehicle;
-    private Date entryDate;
-    private Date exitDate;
+    private String entryDate;
+    private String exitDate;
     private String status;
     private Double paidValue;
 
-    public ParkedVehicles(String typeVehicle, String idVehicle) {
+    public EParkedVehicle(String idVehicle) {
+        this.idVehicle = idVehicle;
+    }
+
+    public EParkedVehicle(String typeVehicle, String idVehicle) {
         this.typeVehicle = typeVehicle;
         this.idVehicle = idVehicle;
     }
@@ -24,19 +26,19 @@ public class ParkedVehicles {
         return idVehicle;
     }
 
-    public Date getEntryDate() {
+    public String getEntryDate() {
         return entryDate;
     }
 
-    public void setEntryDate(Date entryDate) {
+    public void setEntryDate(String entryDate) {
         this.entryDate = entryDate;
     }
 
-    public Date getExitDate() {
+    public String getExitDate() {
         return exitDate;
     }
 
-    public void setExitDate(Date exitDate) {
+    public void setExitDate(String exitDate) {
         this.exitDate = exitDate;
     }
 
@@ -54,5 +56,9 @@ public class ParkedVehicles {
 
     public void setPaidValue(Double paidValue) {
         this.paidValue = paidValue;
+    }
+
+    public void setTypeVehicle(String typeVehicle) {
+        this.typeVehicle = typeVehicle;
     }
 }

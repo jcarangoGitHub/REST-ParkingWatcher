@@ -23,7 +23,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/IDE/gradle/gradle-4.10.2/lib/groovy-all-2.4.15.jar!/" />
+          <root url="jar://D:/IDE/gradle/gradle-4.10.2/lib/gradle-installation-beacon-4.10.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -32,7 +32,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://D:/IDE/gradle/gradle-4.10.2/lib/gradle-installation-beacon-4.10.2.jar!/" />
+          <root url="jar://D:/IDE/gradle/gradle-4.10.2/lib/groovy-all-2.4.15.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
