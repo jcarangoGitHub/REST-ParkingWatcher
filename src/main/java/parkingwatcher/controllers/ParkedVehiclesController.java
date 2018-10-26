@@ -15,10 +15,11 @@ import parkingwatcher.model.parkedvehicle.ParkedVehicleValidator;
 public class ParkedVehiclesController {
     @RequestMapping(value = "/entryVehicle", method = RequestMethod.POST)
     public ResponseEntity<ParkedVehicle> entryVehicle(@RequestParam(value = "typeVehicle") String type,
-                                       @RequestParam(value = "idVehicle") String idVehicle) {
+                                       @RequestParam(value = "idVehicle") String idVehicle,
+                                       @RequestParam(value = "CC", required = false, defaultValue = "0.0") double engineCapacity) {
 
         try {
-            ParkedVehicle parkedVehicle = new ParkedVehicle(type, idVehicle);
+            ParkedVehicle parkedVehicle = new ParkedVehicle(type, idVehicle, engineCapacity);
             ParkedVehicleValidator validator = new ParkedVehicleValidator(parkedVehicle);
             ResponseEntity<ParkedVehicle> responseEntity = validator.validateAll();
             if (responseEntity != null) {

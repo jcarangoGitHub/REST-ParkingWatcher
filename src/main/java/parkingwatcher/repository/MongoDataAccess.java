@@ -41,7 +41,8 @@ public class MongoDataAccess implements IDataAccess {
                 .append("entryDate", parkedVehicle.getEntryDate())
                 .append("status", parkedVehicle.getStatus())
                 .append("exitDate", parkedVehicle.getExitDate())
-                .append("paidValue", parkedVehicle.getPaidValue());
+                .append("paidValue", parkedVehicle.getPaidValue())
+                .append("engineCapacity", parkedVehicle.getPaidValue());
 
 
         WriteResult writeResult = collection.update(filter, update);
@@ -77,7 +78,8 @@ public class MongoDataAccess implements IDataAccess {
                 .append("entryDate", pv.getEntryDate())
                 .append("exitDate", pv.getExitDate())
                 .append("status", pv.getStatus())
-                .append("paidValue", pv.getPaidValue());
+                .append("paidValue", pv.getPaidValue())
+                .append("engineCapacity", pv.getEngineCapacity());
 
         DBCollection collection = getCollection(mongoClient);
         collection.insert(parked);

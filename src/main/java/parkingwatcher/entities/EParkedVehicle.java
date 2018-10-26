@@ -8,6 +8,7 @@ public class EParkedVehicle {
     private String exitDate;
     private String status;
     private Double paidValue;
+    private double engineCapacity;
 
     public EParkedVehicle(String idVehicle) {
         this.idVehicle = idVehicle;
@@ -16,6 +17,12 @@ public class EParkedVehicle {
     public EParkedVehicle(String typeVehicle, String idVehicle) {
         this.typeVehicle = typeVehicle;
         this.idVehicle = idVehicle;
+    }
+
+    public EParkedVehicle(String typeVehicle, String idVehicle, double engineCapacity) {
+        this.typeVehicle = typeVehicle;
+        this.idVehicle = idVehicle;
+        this.engineCapacity = engineCapacity;
     }
 
     public String getTypeVehicle() {
@@ -60,5 +67,13 @@ public class EParkedVehicle {
 
     public void setTypeVehicle(String typeVehicle) {
         this.typeVehicle = typeVehicle;
+    }
+
+    public double getEngineCapacity() {
+        return engineCapacity;
+    }
+
+    public void setEngineCapacity(double engineCapacity) {
+        this.engineCapacity = engineCapacity;
     }
 }

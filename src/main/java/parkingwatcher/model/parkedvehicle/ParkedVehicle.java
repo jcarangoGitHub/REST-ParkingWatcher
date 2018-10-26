@@ -17,10 +17,15 @@ public class ParkedVehicle extends EParkedVehicle {
     private static final double _carDayCost = 8000.0;
     private static final double _motorcycleHourCost = 500.0;
     private static final double _motorcycleDayCost = 4000.0;
+    private static final double _maxEngineCapacity = 500.0;
 
 
     public ParkedVehicle(String typeVehicle, String idVehicle) {
         super(typeVehicle, idVehicle);
+    }
+
+    public ParkedVehicle(String typeVehicle, String idVehicle, double engineCapacity) {
+        super(typeVehicle, idVehicle, engineCapacity);
     }
 
     public ParkedVehicle(String idVehicle) {
@@ -32,9 +37,7 @@ public class ParkedVehicle extends EParkedVehicle {
         this.setStatus("PARKED");
         this.setExitDate(null);
         ParkedVehiclesRepository repository = getInstanceOfParkedVehiclesRepository();
-        repository.insertParkedVehicle(this);
-
-        return this;
+        return repository.insertParkedVehicle(this);
     }
 
     public ParkedVehicle searchVehicleByIdVehicleAndStatusParked() {
@@ -61,7 +64,11 @@ public class ParkedVehicle extends EParkedVehicle {
             if (this.getTypeVehicle().equals("C")) {
                 return util.calculateTotalToPayVehicle(hours, _carHourCost, _carDayCost);
             }else if(this.getTypeVehicle().equals("M")) {
-                return util.calculateTotalToPayVehicle(hours, _motorcycleHourCost, _motorcycleDayCost);
+                Double toPay = util.calculateTotalToPayVehicle(hours, _motorcycleHourCost, _motorcycleDayCost);
+                if (this.getEngineCapacity() > _maxEngineCapacity) {
+                    toPay = toPay + 2000;
+                }
+                return toPay;
             }
         }catch (ParseException pe) {
             System.out.println(pe);

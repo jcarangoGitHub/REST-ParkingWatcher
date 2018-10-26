@@ -17,6 +17,7 @@ public class Converter {
         String exitDate = (String) map.get("exitDate");
         String status = (String) map.get("status");
         Double paidValue = (Double) map.get("paidValue");
+        double engineCapacity = (double) map.get("engineCapacity");
 
         ParkedVehicle parkedVehicle = new ParkedVehicle(idVehicle);
         parkedVehicle.setTypeVehicle(typeVehicle);
@@ -24,6 +25,7 @@ public class Converter {
         parkedVehicle.setExitDate(exitDate);
         parkedVehicle.setStatus(status);
         parkedVehicle.setPaidValue(paidValue);
+        parkedVehicle.setEngineCapacity(engineCapacity);
 
         return parkedVehicle;
     }
