@@ -21,6 +21,11 @@ public class ParkedVehiclesRepository {
         return dataAccess.searchParkedVehicleByIdVehicleAndStatusParked(idVehicle);
     }
 
+    public List<ParkedVehicle> fetchAllVehiclesParked() {
+        IDataAccess dataAccess = new MongoDataAccess();
+        return dataAccess.fetchAllVehiclesParked();
+    }
+
     public ParkedVehicle updateParkedVehicle(ParkedVehicle parkedVehicle) {
         IDataAccess dataAccess = new MongoDataAccess();
         return dataAccess.updateParkedVehicle(parkedVehicle);

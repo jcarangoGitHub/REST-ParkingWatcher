@@ -19,6 +19,8 @@ public class ParkedVehicle extends EParkedVehicle {
     private static final double _motorcycleDayCost = 4000.0;
     private static final double _maxEngineCapacity = 500.0;
 
+    public ParkedVehicle() {
+    }
 
     public ParkedVehicle(String typeVehicle, String idVehicle) {
         super(typeVehicle, idVehicle);
@@ -43,6 +45,12 @@ public class ParkedVehicle extends EParkedVehicle {
     public ParkedVehicle searchVehicleByIdVehicleAndStatusParked() {
         ParkedVehiclesRepository repository = getInstanceOfParkedVehiclesRepository();
         return repository.searchParkedVehicleByIdVehicleAndStatusParked(this.getIdVehicle());
+    }
+
+    public List<ParkedVehicle> fetchAllVehiclesParked() {
+        ParkedVehiclesRepository repository = getInstanceOfParkedVehiclesRepository();
+        return repository.fetchAllVehiclesParked();
+
     }
 
     public ParkedVehicle registerVehicleExit() {

@@ -12,4 +12,6 @@ public interface IDataAccess {
     ParkedVehicle updateParkedVehicle(ParkedVehicle parkedVehicle);
 
     List<ParkedVehicle> getParkedVehiclesByTypeAndStatusParked(String typeVehicle);
+
+    List<ParkedVehicle> fetchAllVehiclesParked();
 }

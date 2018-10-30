@@ -3,12 +3,14 @@ package parkingwatcher.entities;
 public class EParkedVehicle {
 
     private String typeVehicle;
-    private final String idVehicle;
+    private String idVehicle;
     private String entryDate;
     private String exitDate;
     private String status;
     private Double paidValue;
     private double engineCapacity;
+
+    public EParkedVehicle() {   }
 
     public EParkedVehicle(String idVehicle) {
         this.idVehicle = idVehicle;

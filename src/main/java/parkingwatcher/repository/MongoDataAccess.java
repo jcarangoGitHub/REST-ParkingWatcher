@@ -45,7 +45,7 @@ public class MongoDataAccess implements IDataAccess {
                 .append("engineCapacity", parkedVehicle.getPaidValue());
 
 
-        WriteResult writeResult = collection.update(filter, update);
+        collection.update(filter, update);
 
         mongoClient.close();
 
@@ -69,6 +69,25 @@ public class MongoDataAccess implements IDataAccess {
         mongoClient.close();
 
         return converter.DBObjectToParkedVehicle(found);
+    }
+
+    public List<ParkedVehicle> fetchAllVehiclesParked() {
+        System.out.println("fetchAllVehiclesParked");
+        List<ParkedVehicle> list = new LinkedList<>();
+        MongoClient mongoClient = new MongoClient();
+        DBCollection collection = getCollection(mongoClient);
+        DBObject parked = new BasicDBObject("status", "PARKED");
+        DBCursor dbCursor = collection.find(parked);
+
+        if(!dbCursor.hasNext()) {
+            return list;
+        }
+        Converter converter = new Converter();
+        Iterator iterator = dbCursor.iterator();
+        while (iterator.hasNext()) {
+            list.add(converter.DBObjectToParkedVehicle((DBObject) iterator.next()));
+        }
+        return list;
     }
 
     public ParkedVehicle insertParkedVehicle(ParkedVehicle pv) {

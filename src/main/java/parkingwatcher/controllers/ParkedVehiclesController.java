@@ -3,12 +3,11 @@ package parkingwatcher.controllers;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import parkingwatcher.model.parkedvehicle.ParkedVehicle;
 import parkingwatcher.model.parkedvehicle.ParkedVehicleValidator;
+
+import java.util.List;
 
 
 @RestController
@@ -51,5 +50,17 @@ public class ParkedVehiclesController {
             result.registerVehicleExit();
             return new ResponseEntity<>(result, HttpStatus.OK);
         }
+    }
+
+    @RequestMapping(value = "/fetchAll", method = RequestMethod.GET)
+    public @ResponseBody ResponseEntity<List<ParkedVehicle>> fetchAllVehicles() {
+        ParkedVehicle parkedVehicle = new ParkedVehicle();
+        List<ParkedVehicle> result = parkedVehicle.fetchAllVehiclesParked();
+        if (null == result) {
+            HttpHeaders responseHeaders = new HttpHeaders();
+            responseHeaders.setPragma("There are not vehicles parked right now");
+            return new ResponseEntity<>(result, responseHeaders, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }
